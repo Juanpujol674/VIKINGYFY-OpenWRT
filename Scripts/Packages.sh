@@ -10,14 +10,14 @@ UPDATE_PACKAGE() {
 
 	rm -rf $(find ../feeds/luci/ ../feeds/packages/ -maxdepth 3 -type d -iname "*$PKG_NAME*" -prune)
 
-	git clone --depth=1 --single-branch --branch $PKG_BRANCH "https://github.com/$PKG_REPO.git"
+	#git clone --depth=1 --single-branch --branch $PKG_BRANCH "https://github.com/$PKG_REPO.git"
 
 	#if [[ $PKG_SPECIAL == "pkg" ]]; then
 		#cp -rf $(find ./$REPO_NAME/*/ -maxdepth 3 -type d -iname "*$PKG_NAME*" -prune) ./
 		#rm -rf ./$REPO_NAME/
 	#elif [[ $PKG_SPECIAL == "name" ]]; then
 		#mv -f $REPO_NAME $PKG_NAME
-	#fi
+	fi
 }
 
 #UPDATE_PACKAGE "包名" "项目地址" "项目分支" "pkg/name，可选，pkg为从大杂烩中单独提取包名插件；name为重命名为包名"
